@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.todoitem{
+    word-spacing: 1px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 5px;
+}
+#search{
+    outline: none;
+    border-radius: 5px;
+}
