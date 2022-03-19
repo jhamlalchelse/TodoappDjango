@@ -1,8 +1,5 @@
 from django.urls import path
 from todo import views
-from django.conf import settings
-from django.conf.urls.static import static
-
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -12,5 +9,3 @@ urlpatterns = [
     path('uncross/<str:pk>', views.uncross, name='uncross'),
     path('crossoff/<str:pk>', views.crossoff, name='crossoff'),
 ]
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
