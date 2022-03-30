@@ -5,6 +5,7 @@ from django.contrib import messages
 from .forms import EditTodoItem
 from .models import *
 from .forms import *
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -15,7 +16,7 @@ def home(request):
             'items':items,
     }
     return render(request, 'index.html', data)
-
+@csrf_exempt
 def add_todo(request):
     if request.method == 'POST':
         added_date = timezone.now()
@@ -28,7 +29,7 @@ def add_todo(request):
             messages.success(request,'Please fill the item data in input field')
             return redirect(home)
     return render(request, 'index.html')
-
+@csrf_exempt
 def edit_item(request, pk):
     todo = Todo.objects.get(id=pk)
     print(f'todo item is {todo}')
